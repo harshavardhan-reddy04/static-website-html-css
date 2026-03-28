@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Java Polymorphism</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Mastering Java Polymorphism">
+    <meta property="og:description" content="Explore the concept of polymorphism in Java, including its types, real-life examples, and how it enhances code flexibility and maintainability.">
+    <meta property="og:image" content="https://www.geeksforgeeks.org/wp-content/uploads/2024/06/polymorphism_in_java.png">
+    <meta property="og:url" content="https://www.geeksforgeeks.org/java-polymorphism/">
+    <link href="style.css" rel="stylesheet" >
+  </head>
+ <body>
+    <nav>
+        <ul>
+          <li><a href="#compile-time-polymorphism">Compile-time Polymorphism</a></li>
+          <li><a href="#runtime-polymorphism">Runtime Polymorphism</a></li>
+          <li><input type="search" placeholder="Search..." name="search"> <button>Search</button></li>
+        </ul>
+    </nav>
+      <main>
+        <article>      
+          <header>
+          <h1>Java Polymorphism</h1>
+          </header>
+          <p>
+          Polymorphism in Java is one of the core concepts in  th<a href="https://www.geeksforgeeks.org/java/object-oriented-programming-oops-concept-in-java/" target="_blank" rel="noopener noreferrer">object-oriented programming (OOP)</a>at allows objects to behave differently based on their specific class type. The word polymorphism means having many forms, and it comes from the Greek words poly (many) and morph (forms). This means one entity can take many forms.
+          </p>
+          <ul>
+            <li><strong>Multiple Behaviors:</strong> The same method can behave differently depending on the object that calls this method.</li>
+            <li><strong>Method Overriding:</strong> A child class can redefine a method of its parent class.</li>
+            <li><strong>Method Overloading:</strong> Method Overloading: We can define multiple methods with the same name but different parameters.</li>
+            <li><strong>Runtime Decision:</strong> At runtime, Java determines which method to call depending on the object's actual class.</li>
+          </ul>
+        </article>
+        <section class="example"> 
+          <h2>Real-Life Illustration of Polymorphism</h2>
+          <p>Consider a person who plays different roles in life, like a father, a husband, and an employee. Each of these roles defines different behaviors of the person depending on the object calling it.
+          </p>
+          <pre>
+            <code>
+              // Base class Person
+              class Person {
+                
+              // Method that displays the 
+              // role of a person
+                  void role() {
+                      System.out.println("I am a person.");
+                  }
+              }
+              ​
+              // Derived class Father that 
+              // overrides the role method
+              class Father extends Person {
+                
+                  // Overridden method to show 
+                  // the role of a father
+                  @Override
+                  void role() {
+                      System.out.println("I am a father.");
+                  }
+              }
+              ​
+              public class Main {
+                  public static void main(String[] args) { // Creating a reference of type Person, but initializing it with Father class object
+                    
+                      Person p = new Father();
+                      
+                      // Calling the role method. It calls the 
+                      // overridden version in Father class
+                      p.role();  
+                }
+              }
+            </code>
+          </pre>
+          <p><strong>Output</strong></p>
+          <p>I am a father.</p>
+          <p><strong>Explanation:</strong> In the above example, the Person class has a method role() that prints a general message. The Father class overrides role() to print a specific message. The reference of type Person is used to point to an object of type Father, demonstrating polymorphism at runtime. The overridden method in Father is invoked when role() is called.</p>
+        </section>
+        <article>
+          <h2>Types of Polymorphism in Java</h2>
+          <p>In Java, polymorphism is mainly categorized into two types:</p>
+          <figure>
+            <a href="https://www.w3schools.com/java/java_polymorphism.asp" target="blank" rel="noopener noreferrer"><img src="https://www.geeksforgeeks.org/wp-content/uploads/2024/06/polymorphism_in_java.png" alt="Types of Polymorphism in Java" /><figcaption>Fig.1 - Types of Polymorphism in Java</figcaption></a>
+            
+          </figure>
+          <ol>
+            <li>
+              <h3 id="compile-time-polymorphism">Compile-time Polymorphism</h3>
+            </li>
+            <li>
+              <h3 id="runtime-polymorphism">Runtime Polymorphism</h3>
+            </li>
+          </ol>
+        </article> 
+      </main>
+    <footer>
+      <form>
+        <label for="user-email">Subscribe to Java Insights</label>
+        <div class="input-group">
+          <input 
+            type="email" 
+            id="user-email" 
+            placeholder="example@gmail.com" 
+            required>
+          <button type="submit">Join</button>
+        </div>
+      </form>
+    </footer>
+ </body>
+</html>
